@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">NyTimesMVPDemo</string>
+
+    <string name="action_refresh">Refresh</string>
+</resources>
