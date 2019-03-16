@@ -27,11 +27,8 @@ public final class ApiServiceGenerator {
     Retrofit.Builder retrofitBuilder;
     final Gson gson;
     OkHttpClient okHttpClient;
+    private static ApiServiceGenerator mTaskServiceGenerator;
 
-    public static ApiServiceGenerator mTaskServiceGenerator;
-
-
-    //Prevent from composition.
     private ApiServiceGenerator() {
 
         gson = new GsonBuilder().serializeNulls().setLenient().create();
@@ -41,8 +38,6 @@ public final class ApiServiceGenerator {
                 new Retrofit.Builder()
                         .baseUrl(getApiBaseUrl())
                         .addConverterFactory(GsonConverterFactory.create(gson));
-
-
         okHttpClientBuilder = new OkHttpClient.Builder();
         okHttpClient = okHttpClientBuilder.build();
         retrofit = retrofitBuilder.client(okHttpClient).build();
@@ -60,10 +55,7 @@ public final class ApiServiceGenerator {
     }
 
     /**
-     * The core and most important function of this class.
-     * this will generate & return the service for each of the network calls definition we will make
-     * throughout the application.
-     * <p/>
+     * this will generate & return the service for each of the network calls
      *
      * @param serviceClass
      * @param <T>

@@ -23,10 +23,6 @@ public class WebCallback<T> implements Callback<T> {
     private String requestTag = null;
     private ResponseListener networkResponseListener;
 
-    public WebCallback() {
-        NETWORKLIST.add(this);
-    }
-
     public WebCallback(Call<T> call, String tag, ResponseListener networkResponseListener) {
         mTag = tag;
         this.networkResponseListener = networkResponseListener;
@@ -35,8 +31,7 @@ public class WebCallback<T> implements Callback<T> {
     }
 
     /**
-     * Remove the saved network call from the ArrayList (@code mlist), if it has
-     * been completed (successful or failed).
+     * Remove the saved network call from the ArrayList
      *
      * @param requestTag A tag which identifies the network call
      */
@@ -46,7 +41,6 @@ public class WebCallback<T> implements Callback<T> {
             WebCallback item;
             while (iterator.hasNext()) {
                 item = iterator.next();
-
                 if (item != null && item.mTag != null && requestTag.equals(item.mTag)) {
                     iterator.remove();
                 }
@@ -58,10 +52,8 @@ public class WebCallback<T> implements Callback<T> {
     public void onResponse(Call<T> call, Response<T> response) {
 
         if (response.isSuccessful()) {
-
             if (networkResponseListener != null)
                 networkResponseListener.onResponse(response.body(), requestTag);
-
             //Remove the tag on completion of the request.
             // on success of response remove the tag.
             removeRequest(requestTag);
@@ -71,13 +63,10 @@ public class WebCallback<T> implements Callback<T> {
     @Override
     public void onFailure(Call<T> call, Throwable error) {
         requestTag = call.request().header("mTag");
-
         //Can implement your retry function here
-
         if (networkResponseListener != null) {
             networkResponseListener.onFailure(error.getMessage(), requestTag);
         }
-        //
         removeRequest(requestTag);
     }
 

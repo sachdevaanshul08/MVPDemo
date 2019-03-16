@@ -73,11 +73,9 @@ public class MainActivity extends AppCompatActivity implements ArticleView {
     private void initProgressBar() {
         progressBar = new ProgressBar(this, null, android.R.attr.progressBarStyleLarge);
         progressBar.setIndeterminate(true);
-
         RelativeLayout relativeLayout = new RelativeLayout(this);
         relativeLayout.setGravity(Gravity.CENTER);
         relativeLayout.addView(progressBar);
-
         RelativeLayout.LayoutParams params = new
                 RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
         progressBar.setVisibility(View.INVISIBLE);
@@ -92,7 +90,6 @@ public class MainActivity extends AppCompatActivity implements ArticleView {
     private RecyclerItemClickListener recyclerItemClickListener = new RecyclerItemClickListener() {
         @Override
         public void onItemClick(Article article) {
-
             Toast.makeText(MainActivity.this, "Title : " + article.getTitle(),
                     Toast.LENGTH_LONG).show();
 
@@ -114,7 +111,6 @@ public class MainActivity extends AppCompatActivity implements ArticleView {
 
     @Override
     public void setContentToView(ArticleList articleList) {
-
         List<Article> dataList = null;
         if (articleList == null || articleList.getArticleList() == null) {
             dataList = new ArrayList<>();
