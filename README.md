@@ -28,14 +28,15 @@ We have added three scripts (under config folder) in this project which cater to
 4. Type `./gradlew clean connectedAndroidTest test jacocoTestReport`
 
     
-What are these commands :-
-`clean` - build directories.
-
-`connectedAndroidTest`- start UI tests on connected device.
-
-`test`- start Unit tests.
-
-`jacocoTestReport` - transform code coverage report to jacoco format - this command internal depends on 'createDebugCoverageReport' which generates the coverate report.
+     What are these commands :-
+     
+    `clean` - build directories.
+    
+    `connectedAndroidTest`- start UI tests on connected device.
+    
+    `test`- start Unit tests.
+    
+    `jacocoTestReport` - transform code coverage report to jacoco format - this command internal depends on 'createDebugCoverageReport' which generates the coverate report.
 
 
 Now, once you run this you will be able to see multiple folders under `/app/build/` there you will find your lint report and conde coverage report(s) in HTML and XML format.
