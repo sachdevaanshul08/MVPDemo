@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements ArticleView {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        recyclerView = findViewById(R.id.recycler_view_employee_list);
+        recyclerView = findViewById(R.id.rv_article);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(MainActivity.this);
         recyclerView.setLayoutManager(layoutManager);
 

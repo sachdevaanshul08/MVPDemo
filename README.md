@@ -13,7 +13,7 @@ How To Run This Program :-
 3. [Download Android Studio] and install it on your system.
 4. Import the app/project you have downloaed in earlier step.
 4. Run it either on Emulator or Mobile device.(Refer to [How to run Android App])
-5. Congrats! You have execute this app on your machine.
+5. Congrats! You have successfully executed this app on your machine.
 
 ### Just So You Know 
 We have added three scripts (under config folder) in this project which cater to different needs :-
@@ -26,22 +26,27 @@ We have added three scripts (under config folder) in this project which cater to
 2. Move to root folder of this project from console.
 3. Make your emulator or device is connected to system with "usb debugging on" (Refer to [How to run Android App])
 4. Type `./gradlew clean connectedAndroidTest test jacocoTestReport`
+
     
-What is these commands :-
-`clean` - build derictories
-`connectedAndroidTest`- start UI tests on connected device
-`test`- start Unit tests
+What are these commands :-
+`clean` - build directories.
+
+`connectedAndroidTest`- start UI tests on connected device.
+
+`test`- start Unit tests.
+
 `jacocoTestReport` - transform code coverage report to jacoco format - this command internal depends on 'createDebugCoverageReport' which generates the coverate report.
 
-Now, once you run this you will be able to see multiple folders under `/app/build/`  there you will find your lint report and conde coverage report(s) in HTML and XML format.
+
+Now, once you run this you will be able to see multiple folders under `/app/build/` there you will find your lint report and conde coverage report(s) in HTML and XML format.
 To see lint report open "app/build/reports/lint/lint-result.html"
 To see Jacoco coverage report open - "app/build/reports/jacoco/jacocoTestReport/jacocoTestReport.xml" 
 
 Now if you want to see it on BEAUTIFUL interface, along with many more customizations and utilities than run sonarqube.
 
 ### prerequisites to run sonarqube 
-You can fine sonarqube [here]
-Download and the follow the steps to configure the same on your local machine. It won't take more than 2 minutes ofcourse if everything goes well.
+You can find sonarqube [here]
+Download and follow the steps to configure the same on your local machine. It won't take more than 2 minutes ofcourse if everything goes well.
 Somehow if you find some difficulty then you can search it on Google as there are lot of information avaiable on Google about this.
 
 next step, open http://localhost:9000
@@ -57,6 +62,7 @@ We will execute the following command from the console by moving to the root of 
 `sonarqube` - It will analys the matrix reported by jacoco from the previous command and present to you on http://localhost:9000/. Just refresh this page to see the matrix with beautiful interface.
 
 That's not it, you can do much more with sonarqube by adding more plugins.
+
 
 You can read more about it [Official Sonarqube Website]
 About Jacoco as well [Jacoco official website]

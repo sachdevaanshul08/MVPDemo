@@ -55,20 +55,20 @@ public class MainActivityTest {
     @Test
     public void checkRecyclerViewVisibility() throws InterruptedException {
         // verify recycler view is being displayed
-        onView(withId(R.id.recycler_view_employee_list)).check(matches(isDisplayed()));
+        onView(withId(R.id.rv_article)).check(matches(isDisplayed()));
 
         // Get total item of myRecyclerView
-        RecyclerView recyclerView = activityTestRule.getActivity().findViewById(R.id.recycler_view_employee_list);
+        RecyclerView recyclerView = activityTestRule.getActivity().findViewById(R.id.rv_article);
         int itemCount = recyclerView.getAdapter().getItemCount();
 
         if (itemCount > 0) {
 
-            onView(withId(R.id.recycler_view_employee_list)).perform(RecyclerViewActions.scrollToPosition(itemCount - 1));
+            onView(withId(R.id.rv_article)).perform(RecyclerViewActions.scrollToPosition(itemCount - 1));
 
-            onView(withId(R.id.recycler_view_employee_list)).perform(RecyclerViewActions.scrollToPosition(0));
+            onView(withId(R.id.rv_article)).perform(RecyclerViewActions.scrollToPosition(0));
 
 
-            onView(withId(R.id.recycler_view_employee_list))
+            onView(withId(R.id.rv_article))
                     .perform(RecyclerViewActions.actionOnItemAtPosition(0, click()));
 
             // Verify the toast text content
